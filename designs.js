@@ -16,7 +16,6 @@ function makeGrid(event) {
   event.preventDefault();
   pixelCanvas.innerHTML = "";
   // geting values form user input
-  let selectedColor = colorPicker.value;
   let width = inputWidthBtn.value;
   let height = inputHeightBtn.value;
   // for testing
@@ -27,8 +26,7 @@ function makeGrid(event) {
   -------------------
   height is ${height}
   -------------------
-  selectedColor is ${selectedColor}
-  -------------------`);
+  `);
   // grid making loop
   let child = "";
   for (let row = 0; row < width; row++){
@@ -37,10 +35,23 @@ function makeGrid(event) {
   for (let col = 0;col < height; col++){
        pixelCanvas.innerHTML += '<tr>'+child+'</tr>';
   }
-  // add addEventListener to the tabel
-  pixelCanvas.addEventListener('click', (event)=>{
-      let target = event.target;
-      target.style.backgroundColor = selectedColor;
-  });
 
 }
+// add addEventListener to the tabel
+pixelCanvas.addEventListener('click', (event)=>{
+    let selectedColor = colorPicker.value;
+    let target = event.target;
+    console.log(`
+         ${target}
+      `);
+    if (target.tagName === 'TABLE'){
+      console.log('na this is a tabel!!');
+    }else if(target.tagName === 'TR'){
+          console.log('na this is a tr!!');
+    }else{
+      {
+        console.log('selectedColor is '+selectedColor)
+        target.style.backgroundColor = selectedColor;
+      }
+    }
+});
