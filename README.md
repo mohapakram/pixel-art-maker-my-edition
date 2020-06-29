@@ -1,7 +1,7 @@
 
 # Pixel Art Maker Project
 
-> A Javascript based Pixel Art Maker.
+>A Javascript-based Pixel Art Maker.
 
 ## Live Demo
 - [Live Demo](https://rawcdn.githack.com/mohapakram/pixel-art-maker-my-edition/f3da58ec4c5f102130c75018c8e50c79b0f36650/index.html)
